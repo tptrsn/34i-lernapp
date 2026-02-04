@@ -385,6 +385,130 @@ Maximale Widerrufsfrist: 12 Monate und 14 Tage nach Vertragsschluss (bei fehlerh
 <li>Recht auf Datenübertragbarkeit</li>
 <li>Widerspruchsrecht</li>
 </ul>
+</div>
+
+<div class="content-block">
+<h4>Datensicherheit und Verschwiegenheit</h4>
+<ul>
+<li><strong>Vertraulichkeit</strong> - Kundendaten nur für den Beratungszweck nutzen</li>
+<li><strong>Technische und organisatorische Maßnahmen (TOM)</strong> - Zugriffsschutz, Passwörter, Backups</li>
+<li><strong>Verschwiegenheitspflicht</strong> - Keine Weitergabe an Dritte ohne Einwilligung</li>
+</ul>
+</div>`
+        },
+        {
+            id: "2.8",
+            title: "Vertragsrecht & Immobilienerwerb",
+            content: `
+<div class="content-block">
+<h4>Verpflichtungs- und Verfügungsgeschäft</h4>
+<ul>
+<li><strong>Verpflichtungsgeschäft</strong> - z.B. Kaufvertrag (Pflichten werden begründet)</li>
+<li><strong>Verfügungsgeschäft</strong> - z.B. Eigentumsübertragung im Grundbuch</li>
+<li>Beide Rechtsgeschäfte sind rechtlich getrennt (Trennungsprinzip)</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Immobilienkauf</h4>
+<ul>
+<li><strong>Notarielle Beurkundung</strong> ist Pflicht (§311b BGB)</li>
+<li><strong>Auflassung</strong> = Einigung über Eigentumsübergang</li>
+<li><strong>Auflassungsvormerkung</strong> schützt den Käufer vor Zwischenverfügungen</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Rechte an Immobilien</h4>
+<ul>
+<li><strong>Eigentum</strong> am Grundstück</li>
+<li><strong>Erbbaurecht</strong> und <strong>Wohnungseigentum (WEG)</strong></li>
+<li><strong>Dienstbarkeiten</strong> (z.B. Wegerecht, Wohnrecht, Nießbrauch)</li>
+<li><strong>Nicht eingetragene Lasten</strong> - z.B. Baulasten, öffentlich-rechtliche Beschränkungen</li>
+</ul>
+</div>
+
+<div class="important-box">
+<div class="label">⚠️ Rangfolge</div>
+<p>Die Rangfolge im Grundbuch bestimmt, wer im Verwertungsfall zuerst bedient wird. Rangänderungen sind nur mit Zustimmung möglich.</p>
+</div>`
+        },
+        {
+            id: "2.9",
+            title: "Verbraucherkreditrecht & Immobiliar-Darlehen",
+            content: `
+<div class="content-block">
+<h4>Verbraucherkreditrecht</h4>
+<ul>
+<li>Schutzvorschriften für Verbraucher im BGB</li>
+<li>Pflichtangaben im Vertrag (Zins, Effektivzins, Laufzeit, Raten, Sicherheiten)</li>
+<li>Widerrufsrecht und klare Informationen</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Immobiliar-Verbraucherdarlehensvertrag</h4>
+<ul>
+<li>Spezielle Anforderungen bei grundpfandrechtlich gesicherten Darlehen</li>
+<li><strong>Angemessene Erläuterungen</strong> zur Tragfähigkeit und zu Risiken</li>
+<li><strong>Kreditwürdigkeitsprüfung</strong> zwingend vor Abschluss</li>
+<li>7-Tage-Bedenkzeit vor Annahme</li>
+</ul>
+</div>
+
+<div class="important-box">
+<div class="label">💡 Prüfungsfokus</div>
+<p>Immobiliar-Verbraucherdarlehen unterliegen besonderen Informations- und Beratungspflichten. Ziel: Schutz vor Überschuldung.</p>
+</div>`
+        },
+        {
+            id: "2.10",
+            title: "Verbraucherschutz & Wettbewerbsrecht",
+            content: `
+<div class="content-block">
+<h4>Verbraucherschutz</h4>
+<ul>
+<li>Transparente Beratung und Dokumentation</li>
+<li>Hinweise auf Risiken und Folgekosten</li>
+<li>Schlichtungsstellen/Ombudsmann als außergerichtliche Streitbeilegung</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Wettbewerbsrecht (UWG)</h4>
+<ul>
+<li><strong>Keine irreführende Werbung</strong> (Zinsen, Kosten, Vorteile müssen stimmen)</li>
+<li><strong>Kein Druckverkauf</strong> und keine aggressiven Geschäftspraktiken</li>
+<li>Cold Calls nur mit ausdrücklicher Einwilligung</li>
+</ul>
+</div>`
+        },
+        {
+            id: "2.11",
+            title: "Aufsicht, Berufsorganisationen & EU-Binnenmarkt",
+            content: `
+<div class="content-block">
+<h4>Zuständige Stellen</h4>
+<ul>
+<li><strong>IHK</strong> - Erlaubnis und Register für Vermittler (§34i GewO)</li>
+<li><strong>BaFin</strong> - Aufsicht über Banken und Kreditinstitute</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Berufsorganisationen</h4>
+<ul>
+<li>Berufsverbände (z.B. AfW) unterstützen bei Weiterbildung und Standards</li>
+<li>Arbeitnehmervertretungen (z.B. Betriebsrat) bei Beschäftigten</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>EU-Binnenmarkt</h4>
+<ul>
+<li><strong>Dienstleistungsfreiheit</strong> und <strong>Niederlassungsfreiheit</strong></li>
+<li>Grenzüberschreitende Tätigkeit mit Anzeige- und Registrierungspflichten</li>
+</ul>
 </div>`
         }
     ]
@@ -395,8 +519,69 @@ Maximale Widerrufsfrist: 12 Monate und 14 Tage nach Vertragsschluss (bei fehlerh
     hours: 110,
     sections: [
         {
+            id: "3.0",
+            title: "3.0 Markt und wirtschaftliche Grundlagen",
+            content: `
+<div class="content-block">
+<h4>Markt der Immobilien- und Baufinanzierung</h4>
+<ul>
+<li><strong>Kreditgeber</strong> - Banken, Sparkassen, Bausparkassen, Versicherer</li>
+<li><strong>Kreditvermittler</strong> - freie Vermittler, gebundene Vermittler</li>
+<li><strong>Immobilienmärkte</strong> - Angebot, Nachfrage, Preisbildung</li>
+<li><strong>Kreditmärkte</strong> - Zinsniveau und Konditionen</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Einflussfaktoren auf Zinsen</h4>
+<ul>
+<li>Geld- und Notenbankpolitik</li>
+<li>Konjunkturzyklen und Inflation</li>
+<li>Kapitalmarkt und Risikoprämien</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Steuerliche Aspekte (Überblick)</h4>
+<ul>
+<li>Grunderwerbsteuer</li>
+<li>Absetzbarkeit bei Vermietung (Zinsen, Werbungskosten)</li>
+<li>Keine steuerliche Absetzbarkeit bei Eigennutzung</li>
+</ul>
+</div>`
+        },
+        {
+            id: "3.0.1",
+            title: "3.1 Finanzierungsanlässe und Finanzierungsbedarf",
+            content: `
+<div class="content-block">
+<h4>Typische Finanzierungsanlässe</h4>
+<ul>
+<li>Kauf einer Immobilie</li>
+<li>Bau oder Neubau</li>
+<li>Modernisierung und Sanierung</li>
+<li>Umschuldung/Anschlussfinanzierung</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Finanzierungsbedarf - Bestandteile</h4>
+<ul>
+<li><strong>Direkte Kosten</strong> - Kaufpreis oder Baukosten</li>
+<li><strong>Direkte Nebenkosten</strong> - Grunderwerbsteuer, Notar, Grundbuch, Makler</li>
+<li><strong>Indirekte Nebenkosten</strong> - Bereitstellungszinsen, Disagio</li>
+<li><strong>Eigenmittel</strong> und <strong>Fremdmittel</strong></li>
+</ul>
+</div>
+
+<div class="important-box">
+<div class="label">💡 Praxis</div>
+<p>Ein Finanzierungsplan zeigt klar: Kosten, Eigenkapital, Darlehensbedarf und monatliche Rate.</p>
+</div>`
+        },
+        {
             id: "3.1",
-            title: "Darlehensarten",
+            title: "3.2 Kreditprodukte (Darlehensarten)",
             content: `
 <div class="def-box">
 <div class="term">Annuitätendarlehen</div>
@@ -461,7 +646,7 @@ Lohnt sich, wenn Zinsen voraussichtlich über 3,98% steigen!</p>
         },
         {
             id: "3.2",
-            title: "Erwerbsnebenkosten",
+            title: "3.3 Finanzierungsbedarf & Erwerbsnebenkosten",
             content: `
 <div class="content-block">
 <h4>Erwerbsnebenkosten (ca. 10-15% des Kaufpreises!)</h4>
@@ -514,7 +699,7 @@ Mehr EK = Bessere Zinsen + Niedrigerer Beleihungsauslauf!</p>
         },
         {
             id: "3.3",
-            title: "Grundschuld und Hypothek",
+            title: "3.8 Kreditsicherheiten: Grundschuld und Hypothek",
             content: `
 <div class="def-box">
 <div class="term">Grundschuld</div>
@@ -568,8 +753,27 @@ Bei Löschung später: nochmals ca. 400€</p>
 </div>`
         },
         {
+            id: "3.3.1",
+            title: "3.8 Weitere Kreditsicherheiten",
+            content: `
+<div class="content-block">
+<h4>Weitere Sicherheiten</h4>
+<ul>
+<li><strong>Abtretung</strong> von Forderungen (z.B. Gehalt, Mieteinnahmen)</li>
+<li><strong>Bürgschaft</strong> (privat oder bankseitig)</li>
+<li><strong>Sicherungsübereignung</strong> beweglicher Sachen</li>
+<li><strong>Lebensversicherung</strong> als Tilgungsersatz/Sicherheit</li>
+</ul>
+</div>
+
+<div class="important-box">
+<div class="label">💡 Merke</div>
+<p>Sicherheiten reduzieren das Risiko der Bank und können Konditionen verbessern.</p>
+</div>`
+        },
+        {
             id: "3.4",
-            title: "Zinsen und Konditionen",
+            title: "3.4 Konditionsvergleich & Zinsbindung",
             content: `
 <div class="def-box">
 <div class="term">Sollzinssatz</div>
@@ -648,8 +852,42 @@ Bis 60% (1a-Hypothek): z.B. 3,5%
 </div>`
         },
         {
+            id: "3.4.1",
+            title: "3.5 Zinsrechnung & Finanzierungsplan",
+            content: `
+<div class="content-block">
+<h4>Grundformel Zinsrechnung</h4>
+<p><strong>Zinsen = Kapital × Zinssatz × Zeit</strong></p>
+</div>
+
+<div class="example-box">
+<div class="label">📌 Beispiel</div>
+<p>100.000€ Darlehen, 4% p.a., 1 Jahr:<br>
+Zinsen = 100.000 × 0,04 × 1 = 4.000€</p>
+</div>
+
+<div class="content-block">
+<h4>Tilgungsfreie Anlaufjahre</h4>
+<ul>
+<li>In den ersten Monaten/Jahren nur Zinsen</li>
+<li>Reduziert kurzfristig die Rate</li>
+<li>Erhöht langfristig die Gesamtkosten</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Finanzierungsplan</h4>
+<ul>
+<li>Gesamtkosten des Vorhabens</li>
+<li>Eigenkapitalanteil</li>
+<li>Darlehensbedarf und Rate</li>
+<li>Reserve für Unvorhergesehenes</li>
+</ul>
+</div>`
+        },
+        {
             id: "3.5",
-            title: "Kreditwürdigkeitsprüfung",
+            title: "3.7 Kreditwürdigkeitsprüfung",
             content: `
 <div class="content-block">
 <h4>Die drei Säulen der Kreditprüfung</h4>
@@ -711,8 +949,31 @@ Bei negativer Prognose: Darlehen muss abgelehnt werden (Schutz vor Überschuldun
 </div>`
         },
         {
+            id: "3.6.1",
+            title: "3.6 Finanzierungsantrag & Auszahlungsvoraussetzungen",
+            content: `
+<div class="content-block">
+<h4>Finanzierungsantrag</h4>
+<ul>
+<li>Finanzierungsplan und Haushaltsrechnung</li>
+<li>Objektunterlagen (Exposé, Grundbuch, Lageplan)</li>
+<li>Einkommens- und Vermögensnachweise</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Auszahlungsvoraussetzungen</h4>
+<ul>
+<li>Auflassungsvormerkung eingetragen</li>
+<li>Lastenfreistellung geklärt</li>
+<li>Versicherungsnachweise (z.B. Gebäudeversicherung)</li>
+<li>Bei Neubau: Baugenehmigung, Baufortschritt</li>
+</ul>
+</div>`
+        },
+        {
             id: "3.6",
-            title: "Beleihungswertermittlung",
+            title: "3.9 Beleihungsprüfung / Wertermittlung",
             content: `
 <div class="def-box">
 <div class="term">Verkehrswert</div>
@@ -767,7 +1028,7 @@ Darlehensbedarf: 250.000€
         },
         {
             id: "3.7",
-            title: "Risiken der Finanzierung",
+            title: "3.11 Risiken der Finanzierung",
             content: `
 <div class="content-block">
 <h4>1. Zinsänderungsrisiko</h4>
@@ -839,7 +1100,7 @@ Sicherheitspuffer einplanen:
         },
         {
             id: "3.8",
-            title: "Beendigung und Staatliche Förderungen",
+            title: "3.12 Beendigung und Staatliche Förderungen",
             content: `
 <div class="def-box">
 <div class="term">Vorfälligkeitsentschädigung (VFE)</div>
@@ -915,6 +1176,156 @@ Sicherheitspuffer einplanen:
 • Auszahlung über Hausbank
 • KfW haftet, nicht Hausbank</p>
 </div>`
+        },
+        {
+            id: "3.10",
+            title: "3.10 Koppelungsgeschäfte und Nebenleistungen",
+            content: `
+<div class="content-block">
+<h4>Koppelungsgeschäfte</h4>
+<ul>
+<li>Verknüpfung von Darlehen mit Nebenprodukten (z.B. Versicherung)</li>
+<li>Nur zulässig, wenn transparent und im Kundeninteresse</li>
+<li>Unzulässig, wenn Darlehen nur bei Abschluss eines anderen Produkts gewährt wird</li>
+</ul>
+</div>
+
+<div class="important-box">
+<div class="label">⚠️ Merke</div>
+<p>Nebenleistungen müssen klar ausgewiesen und getrennt bewertbar sein.</p>
+</div>`
+        }
+    ]
+},
+{
+    id: 4,
+    title: "4. Immobilienpraxis & Finanzierung (50 UE)",
+    hours: 50,
+    sections: [
+        {
+            id: "4.1",
+            title: "Kaufprozess & Notarablauf",
+            content: `
+<div class="content-block">
+<h4>Typischer Ablauf beim Immobilienkauf</h4>
+<ol>
+<li><strong>Objektprüfung</strong> - Exposé, Grundbuch, Lage, Zustand</li>
+<li><strong>Finanzierungsprüfung</strong> - Haushaltsrechnung, Bankzusage</li>
+<li><strong>Notartermin</strong> - Kaufvertrag wird beurkundet (§311b BGB)</li>
+<li><strong>Auflassungsvormerkung</strong> - Sicherung des Käufers in Abt. II</li>
+<li><strong>Kaufpreisfälligkeit</strong> - Wenn alle Voraussetzungen erfüllt sind</li>
+<li><strong>Übergang Nutzen/Lasten</strong> - Meist bei Kaufpreiszahlung</li>
+<li><strong>Eigentumsumschreibung</strong> - Eintragung in Abt. I</li>
+</ol>
+</div>
+
+<div class="important-box">
+<div class="label">⚠️ Prüfungsfokus</div>
+<p>Ohne notarielle Beurkundung ist der Grundstückskaufvertrag <strong>nichtig</strong>. Die Auflassungsvormerkung schützt den Käufer vor Zwischenverfügungen.</p>
+</div>
+`
+        },
+        {
+            id: "4.2",
+            title: "WEG, Teilungserklärung & Sondereigentum",
+            content: `
+<div class="def-box">
+<div class="term">Wohnungseigentum (WEG)</div>
+<div class="meaning">Sondereigentum an einer Wohnung + Miteigentumsanteil am Gemeinschaftseigentum.</div>
+</div>
+
+<div class="content-block">
+<h4>Wichtige Begriffe</h4>
+<ul>
+<li><strong>Sondereigentum</strong> - Wohnung, ggf. Keller/PKW-Stellplatz</li>
+<li><strong>Gemeinschaftseigentum</strong> - Dach, Fassade, Treppenhaus, Tragwerk</li>
+<li><strong>Sondernutzungsrecht</strong> - Exklusives Nutzungsrecht (z.B. Garten)</li>
+<li><strong>Teilungserklärung</strong> - Regelt Aufteilung und Nutzungsrechte</li>
+<li><strong>Hausgeld</strong> - Monatliche Vorauszahlung für Betriebskosten</li>
+<li><strong>Instandhaltungsrücklage</strong> - Reserve für Reparaturen</li>
+</ul>
+</div>
+
+<div class="important-box">
+<div class="label">💡 Merksatz</div>
+<p>WEG = <strong>Wohnung</strong> + <strong>Anteil am Gemeinschaftseigentum</strong>. Die Teilungserklärung ist die "Verfassung" der Eigentümergemeinschaft.</p>
+</div>
+`
+        },
+        {
+            id: "4.3",
+            title: "Sicherheiten & Grundpfandrechte (Vertiefung)",
+            content: `
+<div class="content-block">
+<h4>Grundpfandrechte in der Praxis</h4>
+<ul>
+<li><strong>Briefgrundschuld</strong> - Übertragung durch Brief + Abtretung</li>
+<li><strong>Buchgrundschuld</strong> - Nur durch Grundbucheintragung</li>
+<li><strong>Eigentümergrundschuld</strong> - Nach Tilgung möglich</li>
+</ul>
+</div>
+
+<div class="content-block">
+<h4>Sicherungsabrede (Zweckerklärung)</h4>
+<p>Regelt, <strong>welche Forderungen</strong> durch die Grundschuld gesichert werden. Nur schuldrechtlich zwischen Bank und Eigentümer.</p>
+</div>
+
+<div class="content-block">
+<h4>Rangrücktritt & Rangänderung</h4>
+<ul>
+<li><strong>Rangrücktritt</strong> - Bessere Rangstelle für neue Bank</li>
+<li><strong>Rangänderung</strong> - Änderung der Rangfolge im Grundbuch</li>
+<li><strong>Wichtig</strong> - Bestimmt die Reihenfolge der Befriedigung im Verwertungsfall</li>
+</ul>
+</div>
+`
+        },
+        {
+            id: "4.4",
+            title: "Unterlagen für die Baufinanzierung",
+            content: `
+<div class="content-block">
+<h4>Typische Unterlagen (Auswahl)</h4>
+<ul>
+<li><strong>Persönliche Daten</strong> - Ausweis, Selbstauskunft</li>
+<li><strong>Einkommen</strong> - Gehaltsnachweise, Steuerbescheide</li>
+<li><strong>Objekt</strong> - Exposé, Grundbuchauszug, Lageplan</li>
+<li><strong>Bei Neubau</strong> - Baupläne, Baubeschreibung, Kostenaufstellung</li>
+<li><strong>Absicherung</strong> - Versicherungsnachweise (z.B. Gebäudeversicherung)</li>
+</ul>
+</div>
+
+<div class="important-box">
+<div class="label">⚠️ Prüfungsrelevant</div>
+<p>Die Bank prüft <strong>Kreditwürdigkeit</strong> und <strong>Werthaltigkeit</strong> der Sicherheit. Vollständige Unterlagen beschleunigen die Zusage.</p>
+</div>
+`
+        },
+        {
+            id: "4.5",
+            title: "Haushaltsrechnung & Kapitaldienstfähigkeit",
+            content: `
+<div class="content-block">
+<h4>Grundformel</h4>
+<p><strong>Einnahmen - Ausgaben = frei verfügbarer Betrag</strong></p>
+</div>
+
+<div class="content-block">
+<h4>Praxis-Tipps</h4>
+<ul>
+<li>Lebenshaltungskosten realistisch ansetzen</li>
+<li>Sicherheitszuschlag von 20-30% einplanen</li>
+<li>Rücklagen für Instandhaltung berücksichtigen</li>
+<li>Kapitaldienst darf das Budget nicht überlasten</li>
+</ul>
+</div>
+
+<div class="example-box">
+<div class="label">📌 Beispiel</div>
+<p>Einnahmen 3.500€ - Ausgaben 2.000€ = 1.500€ frei.  
+Davon max. 40% für die Rate -> 600€.</p>
+</div>
+`
         }
     ]
 }
@@ -1027,6 +1438,43 @@ quiz: [
     {cat:"Beratung",q:"Was darf ein Honorar-Immobiliardarlehenberater NICHT tun?",a:["Beraten","Darlehen vermitteln","Beratungsprotokoll erstellen","Vergleiche anstellen"],c:1,e:"Honorarberater (§34i Abs. 5 GewO) darf NUR beraten gegen Honorar vom Kunden, aber NICHT vermitteln oder abschließen. Strenge Trennung!"},
     {cat:"Finanzierung",q:"Welche KfW-Programmnummer ist für Wohneigentumskauf?",a:["KfW 124","KfW 153","KfW 270","KfW 300"],c:0,e:"KfW 124 (Wohneigentumsprogramm): Für Kauf oder Bau von selbstgenutztem Wohneigentum. Bis 100.000€ pro Vorhaben, zinsgünstig."},
     {cat:"Finanzierung",q:"Was ist der Unterschied zwischen Sollzinsbindung und Vertragslaufzeit?",a:["Kein Unterschied","Sollzinsbindung = Zeitraum fester Zinsen, Vertragslaufzeit = bis zur vollständigen Tilgung","Beides ist gleich lang","Sollzinsbindung ist immer länger"],c:1,e:"Sollzinsbindung = Zeitraum, in dem Zinssatz fest ist (z.B. 10 Jahre). Vertragslaufzeit = gesamte Zeit bis vollständige Tilgung (oft 25-35 Jahre). Nach Zinsbindung: Prolongation oder Umschuldung."},
+    
+    // Immobilienpraxis & WEG
+    {cat:"Recht",q:"Was regelt die Teilungserklärung?",a:["Nur den Kaufpreis","Die Aufteilung in Sonder- und Gemeinschaftseigentum","Die Höhe des Darlehens","Die Maklerprovision"],c:1,e:"Die Teilungserklärung legt die Aufteilung in Sondereigentum, Gemeinschaftseigentum und Sondernutzungsrechte fest. Grundlage für WEG."},
+    {cat:"Recht",q:"Was ist Sondereigentum?",a:["Das gesamte Gebäude","Die Wohnung (ggf. mit Keller/Stellplatz)","Nur das Dach","Das Treppenhaus"],c:1,e:"Sondereigentum ist der alleinige Eigentumsbereich (Wohnung, ggf. Keller/PKW-Stellplatz). Dach und Tragwerk sind Gemeinschaftseigentum."},
+    {cat:"Recht",q:"Was bedeutet Sondernutzungsrecht?",a:["Recht zum Verkauf","Alleine Nutzung bestimmter Flächen (z.B. Garten)","Recht auf Mieteinnahmen","Recht auf Umbau ohne Zustimmung"],c:1,e:"Sondernutzungsrecht = exklusives Nutzungsrecht an Gemeinschaftsflächen (z.B. Garten oder Stellplatz), bleibt aber Gemeinschaftseigentum."},
+    {cat:"Recht",q:"Was ist ein Rangrücktritt?",a:["Löschung einer Grundschuld","Vereinbarung, dass eine neue Grundschuld im Rang vorgeht","Erhöhung der Zinsbindung","Wechsel des Eigentümers"],c:1,e:"Rangrücktritt: Bestehende Grundschuld tritt im Rang zurück, damit eine neue Finanzierung den besseren Rang bekommt."},
+    
+    // Kaufprozess & Unterlagen
+    {cat:"Recht",q:"Wann wird der Kaufpreis fällig?",a:["Sofort bei Unterschrift","Nach Notartermin und wenn die Voraussetzungen erfüllt sind","Erst nach Eigentumsumschreibung","Nach 12 Monaten"],c:1,e:"Kaufpreisfälligkeit tritt ein, wenn die vertraglich vereinbarten Voraussetzungen vorliegen (z.B. Auflassungsvormerkung, Lastenfreistellung)."},
+    {cat:"Recht",q:"Was bedeutet Eigentumsumschreibung?",a:["Übergang von Nutzen und Lasten","Eintragung des neuen Eigentümers in Abteilung I","Eintrag der Grundschuld in Abteilung III","Löschung der Vormerkung"],c:1,e:"Eigentumsumschreibung = Eintragung des neuen Eigentümers in Abteilung I des Grundbuchs."},
+    {cat:"Finanzierung",q:"Welche Unterlagen sind bei Neubau typisch?",a:["Nur der Kaufvertrag","Baupläne, Baubeschreibung, Kostenaufstellung","Nur die Schufa-Auskunft","Nur der Grundbuchauszug"],c:1,e:"Bei Neubau werden u.a. Baupläne, Baubeschreibung und Kostenaufstellung benötigt, zusätzlich zu persönlichen Unterlagen."},
+    
+    // Haushaltsrechnung & Tragfähigkeit
+    {cat:"Finanzierung",q:"Was bedeutet Kapitaldienstfähigkeit?",a:["Nur die Fähigkeit, Zinsen zu zahlen","Fähigkeit, Zinsen und Tilgung dauerhaft zu leisten","Die Höhe der Grundschuld","Die Laufzeit des Darlehens"],c:1,e:"Kapitaldienstfähigkeit beschreibt, ob der Kunde die laufende Rate (Zins + Tilgung) dauerhaft aus dem Haushaltsüberschuss zahlen kann."},
+    {cat:"Finanzierung",q:"Was ist beim Hausgeld zu beachten?",a:["Es zählt nicht in der Haushaltsrechnung","Es umfasst Betriebskosten und Instandhaltungsrücklage","Es wird nur einmal gezahlt","Es ersetzt die Kreditrate"],c:1,e:"Hausgeld enthält laufende Betriebskosten und anteilige Rücklagen. Es muss in der Haushaltsrechnung berücksichtigt werden."},
+    
+    // Förderungen
+    {cat:"Beratung",q:"Wann muss ein KfW-Antrag gestellt werden?",a:["Nach Beginn des Vorhabens","Vor Beginn des Vorhabens über die Hausbank","Direkt beim Notar","Erst nach Eigentumsumschreibung"],c:1,e:"KfW-Anträge müssen VOR Beginn des Vorhabens über die Hausbank gestellt werden. Nachträgliche Anträge sind nicht möglich."},
+    
+    // Vertragsrecht & Immobilienerwerb
+    {cat:"Recht",q:"Was beschreibt das Trennungsprinzip?",a:["Kaufvertrag und Eigentumsübertragung sind rechtlich getrennt","Der Notar trennt Käufer und Verkäufer","Die Bank trennt Zins und Tilgung","Die Grundschuld ist vom Grundbuch getrennt"],c:0,e:"Trennungsprinzip: Verpflichtungsgeschäft (Kaufvertrag) und Verfügungsgeschäft (Eigentumsübertragung) sind rechtlich getrennt."},
+    {cat:"Recht",q:"Welche Last ist in der Regel NICHT im Grundbuch eingetragen?",a:["Wegerecht","Nießbrauch","Baulast","Grundschuld"],c:2,e:"Baulasten sind öffentlich-rechtliche Verpflichtungen und stehen meist im Baulastenverzeichnis, nicht im Grundbuch."},
+    
+    // Verbraucherkreditrecht
+    {cat:"Recht",q:"Was ist ein Immobiliar-Verbraucherdarlehensvertrag?",a:["Darlehen nur für Gewerbeimmobilien","Verbraucherdarlehen, das durch Grundpfandrechte gesichert ist","Jeder Ratenkredit","Nur KfW-Darlehen"],c:1,e:"Immobiliar-Verbraucherdarlehen: Verbraucherdarlehen, das durch Grundpfandrechte gesichert ist oder dem Immobilienerwerb dient. Besondere Pflichten!" },
+    {cat:"Beratung",q:"Was gehört zu den besonderen Pflichten bei Immobiliar-Verbraucherdarlehen?",a:["Keine Beratungspflichten","Angemessene Erläuterungen und Kreditwürdigkeitsprüfung","Nur schriftliche Werbung","Nur Abschluss über Notar"],c:1,e:"Es bestehen besondere Informations- und Beratungspflichten, inklusive angemessener Erläuterungen und zwingender Kreditwürdigkeitsprüfung."},
+    
+    // Markt & Finanzierung
+    {cat:"Finanzierung",q:"Was zählt zu indirekten Erwerbsnebenkosten?",a:["Kaufpreis","Bereitstellungszinsen und Disagio","Notar und Grundbuch","Maklercourtage"],c:1,e:"Indirekte Nebenkosten sind z.B. Bereitstellungszinsen und Disagio (Damnum)."},
+    {cat:"Finanzierung",q:"Welche Institution steuert durch Geldpolitik das allgemeine Zinsniveau wesentlich mit?",a:["IHK","Notenbank (EZB)","Grundbuchamt","Schufa"],c:1,e:"Die Notenbank (EZB) beeinflusst das allgemeine Zinsniveau durch ihre Geldpolitik."},
+    
+    // Aufsicht & Verbraucherschutz
+    {cat:"Recht",q:"Wer ist für die Aufsicht über Immobiliardarlehensvermittler nach §34i zuständig?",a:["BaFin","IHK","Finanzamt","Bundesbank"],c:1,e:"Zuständig ist die IHK (Erlaubnis und Register). Banken unterliegen der BaFin-Aufsicht."},
+    {cat:"Beratung",q:"Was ist eine Schlichtungsstelle?",a:["Eine Werbungseinheit","Außergerichtliche Streitbeilegung (Ombudsmann)","Ein Teil des Grundbuchs","Ein Sondertilgungskonto"],c:1,e:"Schlichtungsstellen dienen der außergerichtlichen Streitbeilegung, z.B. über Ombudsmannverfahren."},
+    
+    // Koppelungsgeschäfte
+    {cat:"Beratung",q:"Wann ist ein Koppelungsgeschäft unzulässig?",a:["Wenn das Nebenprodukt freiwillig ist","Wenn das Darlehen nur bei Abschluss eines Nebenprodukts gewährt wird","Wenn die Nebenleistung transparent ist","Wenn die Nebenleistung günstiger ist"],c:1,e:"Unzulässig ist es, wenn der Kredit nur bei Abschluss eines weiteren Produkts (z.B. Versicherung) gewährt wird."},
 ],
 
 // ========================================
@@ -1096,7 +1544,7 @@ cards: [
     // Weitere wichtige Begriffe
     {f:"Was ist ein Disagio (Damnum)?",b:"Abschlag vom Auszahlungsbetrag\n\nBeispiel:\n100.000€ Darlehen, 5% Disagio\n→ Auszahlung nur 95.000€\n→ Rückzahlung: 100.000€\n\nZweck:\n✓ Senkt nominalen Zinssatz\n✗ Erhöht Effektivzins!\n\nSteuerlich:\nBei Vermietung sofort absetzbar\nBei Eigennutzung nicht absetzbar",cat:"Finanzierung"},
     {f:"Was sind Bereitstellungszinsen?",b:"Zinsen auf NICHT abgerufene Darlehensbeträge\n\nTypisch bei Neubau (teilweise Abruf)\n\nHöhe: ca. 0,15-0,25% pro Monat\n\nBereitstellungszinsfreie Zeit:\nMeist 6-12 Monate\n\nDanach: Zinsen auf nicht abgerufenen Rest\n\nTIPP: Bei Neubau genau planen!",cat:"Finanzierung"},
-    {f:"Schufa-Score - Was bedeutet das?",b:"Score-Wert: 0-100%\nJe höher, desto besser!\n\nÜber 97,5%: Sehr gut\n95-97,5%: Gut\n90-95%: Befriedigend\nUnter 90%: Problematisch\n\nSpeichert:\n• Laufende Kredite\n• Konten, Kreditkarten\n• Zahlungsstörungen\n• Insolvenzen\n\nWichtig für Kreditentscheidung!",cap:"Finanzierung"},
+    {f:"Schufa-Score - Was bedeutet das?",b:"Score-Wert: 0-100%\nJe höher, desto besser!\n\nÜber 97,5%: Sehr gut\n95-97,5%: Gut\n90-95%: Befriedigend\nUnter 90%: Problematisch\n\nSpeichert:\n• Laufende Kredite\n• Konten, Kreditkarten\n• Zahlungsstörungen\n• Insolvenzen\n\nWichtig für Kreditentscheidung!",cat:"Finanzierung"},
     
     // Versicherungen
     {f:"Risikolebensversicherung zur Absicherung?",b:"Bei Tod: Auszahlung der Versicherungssumme\n\nHöhe: Idealerweise = Darlehenssumme\n\nZweck: Familie kann Darlehen ablösen\n\nVorteile:\n✓ Sehr günstig\n✓ Hohe Absicherung\n✓ Flexible Laufzeit\n\nNachteil:\n✗ Kein Sparanteil\n✗ Bei Überleben: kein Geld zurück",cat:"Finanzierung"},
@@ -1107,6 +1555,16 @@ cards: [
     {f:"Aktives Zuhören - Was ist das?",b:"Gesprächstechnik für bessere Kommunikation\n\nTECHNIKEN:\n✓ Nachfragen stellen\n✓ Zusammenfassen\n✓ Bestätigen\n✓ Paraphrasieren\n✓ Offene Fragen\n\nZEIGT:\n• Ich habe verstanden\n• Ich interessiere mich\n• Ich nehme Sie ernst\n\nWichtig für Vertrauensaufbau!",cat:"Beratung"},
     {f:"Beratungsdokumentation - Was muss rein?",b:"Pflichtangaben nach §511 BGB:\n\n✓ Kundenwünsche und -bedürfnisse\n✓ Beratungsgrundlage\n✓ Empfehlung mit Begründung\n✓ Warum passt das Produkt?\n✓ Datum und Unterschrift\n\nAufbewahrung: 5 Jahre!\n\nBeweislast: Beim Vermittler!\n\nBei Fehlen: Schadensersatzansprüche möglich",cat:"Beratung"},
     
+    // Rahmenplan-Ergänzungen
+    {f:"Trennungsprinzip (Kaufrecht)?",b:"Verpflichtungsgeschäft und Verfügungsgeschäft sind getrennt.\n\nBeispiel:\n• Kaufvertrag (Pflichten)\n• Eigentumsübertragung im Grundbuch",cat:"Recht"},
+    {f:"Immobiliar-Verbraucherdarlehen?",b:"Verbraucherdarlehen, das durch Grundpfandrechte gesichert ist oder dem Erwerb/Erhalt einer Immobilie dient.\n\nBesondere Pflichten:\n• Angemessene Erläuterungen\n• Kreditwürdigkeitsprüfung\n• Transparente Informationen",cat:"Recht"},
+    {f:"Indirekte Erwerbsnebenkosten?",b:"Kosten, die nicht direkt im Kaufpreis enthalten sind.\n\nBeispiele:\n• Bereitstellungszinsen\n• Disagio (Damnum)",cat:"Finanzierung"},
+    {f:"Einfluss auf Zinsniveau?",b:"Wichtige Faktoren:\n• Geld- und Notenbankpolitik (EZB)\n• Konjunktur und Inflation\n• Kapitalmarkt und Risikoprämien",cat:"Finanzierung"},
+    {f:"Aufsicht über Vermittler?",b:"IHK erteilt Erlaubnis und führt Register.\n\nBanken unterliegen der BaFin-Aufsicht.",cat:"Recht"},
+    {f:"Schlichtungsstelle (Ombudsmann)?",b:"Außergerichtliche Streitbeilegung bei Konflikten zwischen Kunde und Anbieter.\n\nZiel: schnelle, kostengünstige Lösung.",cat:"Beratung"},
+    {f:"Koppelungsgeschäft - Wann unzulässig?",b:"Wenn das Darlehen nur bei Abschluss eines Nebenprodukts gewährt wird.\n\nNebenleistungen müssen transparent und getrennt bewertbar sein.",cat:"Beratung"},
+    {f:"Finanzierungsplan - Inhalt?",b:"Übersicht über:\n• Gesamtkosten\n• Eigenkapital\n• Darlehensbedarf\n• Rate und Puffer",cat:"Finanzierung"},
+    
     // Zusätzliche Vertiefung
     {f:"Tilgungsdarlehen - Was ist das?",b:"Darlehen mit gleichbleibender TILGUNG\n(nicht gleichbleibende Rate!)\n\nFolge:\n• Rate sinkt kontinuierlich\n• Anfangs sehr hohe Belastung\n• Gegen Ende: niedrige Belastung\n\nHeute selten, meist bei:\n• Gewerbefinanzierung\n• Öffentlichen Darlehen\n\nPrivat: Annuitätendarlehen häufiger",cat:"Finanzierung"},
     {f:"Was ist ein Policendarlehen?",b:"Endfälliges Darlehen mit Lebensversicherung als Tilgungsersatz\n\nFunktion:\n• Während Laufzeit: Nur Zinsen zahlen\n• Parallel: LV-Beiträge zahlen\n• Am Ende: LV tilgt Darlehen\n\nVorteil (früher):\n✓ Steuerlich absetzbar\n\nNachteil:\n✗ Heute steuerlich nicht mehr interessant\n✗ Oft schlechte LV-Renditen",cat:"Finanzierung"},
@@ -1114,6 +1572,18 @@ cards: [
     {f:"Was ist ein Erbbaurecht?",b:"Veräußerliches und vererbliches Recht,\nauf fremdem Grund ein Bauwerk zu haben\n\nLaufzeit: Meist 99 Jahre\n\nGegen: Erbbauzins an Grundstückseigentümer\n\nEigenes Grundbuch!\nGrundstücksgleiche Rechte\n\nVorteil: Günstiger als Grundstückskauf\nNachteil: Zeitlich begrenzt, Erbbauzins",cat:"Recht"},
     {f:"Was ist ein Nießbrauch?",b:"Recht auf Nutzung und Erträge einer Immobilie\n\nBerechtigung:\n✓ Bewohnen\n✓ Vermieten (Miete behalten)\n✓ Nutzen\n\nABER: Kein Eigentum!\n\nTypisch bei:\n• Schenkung an Kinder\n• Eltern behalten Nießbrauch\n• Lebenslanges Wohnrecht\n\nEintragung: Abteilung II\nNicht übertragbar, höchstpersönlich",cat:"Recht"},
     {f:"Auflassungsvormerkung - Was ist das?",b:"Sicherung des Käufers im Grundbuch\n\nEintragung in Abteilung II\n\nSchutz vor:\n✗ Weiterverkauf an Dritte\n✗ Zusätzlichen Belastungen\n✗ Verfügungsbeschränkungen\n\nZeitpunkt:\nNach Kaufvertragsabschluss,\nVOR Kaufpreiszahlung\n\nLöschung:\nNach Eigentumsübertragung",cat:"Recht"},
+    
+    // Immobilienpraxis & WEG
+    {f:"Teilungserklärung - Wofür?",b:"Regelt die Aufteilung in:\n\n• Sondereigentum\n• Gemeinschaftseigentum\n• Sondernutzungsrechte\n\nGrundlage der WEG. Enthält Lagepläne, Miteigentumsanteile und Nutzungsregeln.",cat:"Recht"},
+    {f:"Sondereigentum vs. Gemeinschaftseigentum?",b:"SONDEREIGENTUM:\n• Wohnung, ggf. Keller/Stellplatz\n\nGEMEINSCHAFTSEIGENTUM:\n• Dach, Fassade, Treppenhaus, Tragwerk\n\nMerksatz: Alles, was für Bestand und Sicherheit nötig ist, bleibt Gemeinschaftseigentum.",cat:"Recht"},
+    {f:"Sondernutzungsrecht - Beispiel?",b:"Exklusives Nutzungsrecht an Gemeinschaftsflächen.\n\nBeispiele:\n• Gartenfläche\n• Außenstellplatz\n• Dachterrasse\n\nBleibt Gemeinschaftseigentum, wird aber alleine genutzt.",cat:"Recht"},
+    {f:"Hausgeld - Was ist enthalten?",b:"Monatliche Vorauszahlung in der WEG.\n\nEnthält:\n• Betriebskosten\n• Verwalterkosten\n• Instandhaltungsrücklage (anteilig)\n\nMuss in der Haushaltsrechnung berücksichtigt werden!",cat:"Finanzierung"},
+    {f:"Kaufpreisfälligkeit - Voraussetzungen?",b:"Kaufpreis wird fällig, wenn u.a.:\n\n✓ Auflassungsvormerkung eingetragen\n✓ Lastenfreistellung gesichert\n✓ Genehmigungen/Verzichtserklärungen vorliegen\n\nDann erfolgt Zahlungsaufforderung durch Notar.",cat:"Recht"},
+    {f:"Übergang von Nutzen und Lasten?",b:"Zeitpunkt, ab dem der Käufer:\n\n• Nutzungen erhält (Mieten, Besitz)\n• Kosten/Lasten trägt (Steuern, Hausgeld)\n\nMeist: mit Kaufpreiszahlung.",cat:"Recht"},
+    {f:"Rangrücktritt - Wozu?",b:"Bestehende Grundschuld tritt im Rang zurück,\n\n-> neue Bank erhält besseren Rang\n-> wichtig für Anschlussfinanzierung/Umschuldung\n\nErhöht die Werthaltigkeit der neuen Sicherheit.",cat:"Recht"},
+    {f:"Kapitaldienstfähigkeit - Bedeutung?",b:"Fähigkeit, Zins + Tilgung dauerhaft zu zahlen.\n\nPrüfung via Haushaltsrechnung:\nEinnahmen - Ausgaben = Rate tragbar?\n\nPflichtprüfung nach §505a BGB.",cat:"Finanzierung"},
+    {f:"Unterlagen bei Neubau - Auswahl?",b:"Typisch erforderlich:\n\n• Baupläne und Baubeschreibung\n• Kostenaufstellung\n• Lageplan/Flurkarte\n• Eigenkapitalnachweise\n• Versicherungsnachweise",cat:"Finanzierung"},
+    {f:"Eigentumsumschreibung - Was heißt das?",b:"Eintragung des neuen Eigentümers in Abteilung I.\n\nErst damit ist der Käufer rechtlich Eigentümer.\n\nErfolgt nach Kaufpreiszahlung und Erfüllung aller Voraussetzungen.",cat:"Recht"},
     
     // Noch mehr Vertiefung
     {f:"Sondertilgung - Was ist das?",b:"Außerplanmäßige zusätzliche Tilgung\n\nVorteile:\n✓ Schnellere Schuldenfreiheit\n✓ Weniger Gesamtzinsen\n✓ Kürzere Laufzeit ODER\n✓ Niedrigere Rate\n\nMeist im Vertrag:\n5-10% der Darlehenssumme p.a. kostenfrei\n\nOhne Vereinbarung:\nBank kann VFE verlangen!\n\nEinfluss auf Konditionen:\nEtwas höherer Zins",cat:"Finanzierung"},
