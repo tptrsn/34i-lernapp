@@ -1496,6 +1496,7 @@ tr:nth-child(even) {
 <input type="text" class="search-input" placeholder="🔍 Suche nach Begriffen..." id="searchInput">
 <div id="chaptersContainer"></div>
 </div>
+</div>
 
 <div id="quiz-view" class="view">
 <div id="quizSetup">
@@ -1657,6 +1658,17 @@ tr:nth-child(even) {
 <button class="btn btn-secondary" onclick="Profile.resetProgress()" style="margin-top: 12px;">
 🔄 Fortschritt zurücksetzen
 </button>
+</div>
+
+<div class="profile-actions" style="margin-top: 16px;">
+<div class="card" style="padding:16px;">
+<h3 style="margin-bottom:8px;">Sync-Code</h3>
+<p style="color:#a0aec0;font-size:0.9rem;margin-bottom:12px;">Nutze einen Code, um auf mehreren Geräten zu synchronisieren.</p>
+<input type="text" id="syncCodeInput" class="search-input" placeholder="Sync-Code eingeben" style="margin-bottom:12px;">
+<button class="btn btn-primary" onclick="Profile.setSyncCode()">Sync-Code setzen</button>
+<button class="btn btn-secondary" onclick="Profile.generateSyncCode()" style="margin-top:12px;">Code generieren</button>
+<button class="btn btn-secondary" onclick="Profile.clearSyncCode()" style="margin-top:12px;">Sync-Code löschen</button>
+</div>
 </div>
 
 <div class="app-info">

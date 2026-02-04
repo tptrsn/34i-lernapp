@@ -11,13 +11,21 @@ const APP_VERSION = '2.0.0';
 const FirebaseSync = {
     userId: null,
     isEnabled: false,
+    isApplyingRemote: false,
+    lastCloudUpdate: null,
+    syncCodeKey: '34i-sync-code',
 
     async init() {
-        // Erstelle oder hole User ID
-        this.userId = localStorage.getItem('34i-user-id');
-        if (!this.userId) {
-            this.userId = 'user_' + Math.random().toString(36).substr(2, 9) + Date.now();
-            localStorage.setItem('34i-user-id', this.userId);
+        // Sync-Code hat Vorrang vor Auto-User-ID
+        const syncCode = localStorage.getItem(this.syncCodeKey);
+        if (syncCode) {
+            this.userId = 'code_' + this.normalizeSyncCode(syncCode);
+        } else {
+            this.userId = localStorage.getItem('34i-user-id');
+            if (!this.userId) {
+                this.userId = 'user_' + Math.random().toString(36).substr(2, 9) + Date.now();
+                localStorage.setItem('34i-user-id', this.userId);
+            }
         }
 
         // Prüfe ob Firebase verfügbar ist
@@ -30,6 +38,14 @@ const FirebaseSync = {
             console.log('📱 Nur lokale Speicherung aktiv');
         }
     },
+    
+    normalizeSyncCode(value) {
+        return (value || '')
+            .toString()
+            .toLowerCase()
+            .replace(/[^a-z0-9]/g, '')
+            .slice(0, 32);
+    },
 
     async loadFromCloud() {
         if (!this.isEnabled) return;
@@ -41,12 +57,11 @@ const FirebaseSync = {
 
             if (docSnap.exists()) {
                 const cloudData = docSnap.data();
-                // Merge cloud data with local data
-                State.learned = cloudData.learned || State.learned;
-                State.bestScore = Math.max(cloudData.bestScore || 0, State.bestScore);
-                State.examResults = cloudData.examResults || State.examResults;
-                State.totalQuizzesTaken = cloudData.totalQuizzesTaken || State.totalQuizzesTaken;
+                this.applyRemoteState(cloudData);
                 console.log('☁️ Daten aus Cloud geladen');
+            } else {
+                // Kein Cloud-Dokument vorhanden -> lokale Daten hochladen
+                this.saveToCloud();
             }
         } catch (error) {
             console.warn('Cloud-Sync Fehler:', error);
@@ -55,6 +70,7 @@ const FirebaseSync = {
 
     async saveToCloud() {
         if (!this.isEnabled) return;
+        if (this.isApplyingRemote) return;
 
         try {
             const { setDoc, doc } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
@@ -64,7 +80,7 @@ const FirebaseSync = {
                 bestScore: State.bestScore,
                 examResults: State.examResults,
                 totalQuizzesTaken: State.totalQuizzesTaken,
-                lastUpdated: new Date().toISOString()
+                lastUpdated: State.lastUpdated
             });
             console.log('☁️ In Cloud gespeichert');
         } catch (error) {
@@ -73,10 +89,69 @@ const FirebaseSync = {
     },
 
     setupRealtimeSync() {
-        // Sync bei Änderungen
+        // Realtime-Listener für Änderungen von anderen Geräten/Tabs
+        this.subscribeToCloud();
+
+        // Fallback: vor dem Schließen nochmal speichern
         window.addEventListener('beforeunload', () => {
             this.saveToCloud();
         });
+
+        // Bei Rückkehr in den Tab kurz nachziehen
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                this.loadFromCloud();
+            }
+        });
+    },
+
+    async subscribeToCloud() {
+        if (!this.isEnabled) return;
+
+        try {
+            const { onSnapshot, doc } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+            const docRef = doc(window.firebaseDB, 'users', this.userId);
+
+            onSnapshot(docRef, (docSnap) => {
+                if (!docSnap.exists()) return;
+                const cloudData = docSnap.data();
+                this.applyRemoteState(cloudData);
+            });
+        } catch (error) {
+            console.warn('Cloud-Realtime Fehler:', error);
+        }
+    },
+
+    applyRemoteState(cloudData) {
+        if (!cloudData) return;
+
+        const cloudUpdated = cloudData.lastUpdated || null;
+        const localUpdated = State.lastUpdated || null;
+
+        if (cloudUpdated && this.lastCloudUpdate === cloudUpdated) return;
+
+        const cloudTime = cloudUpdated ? new Date(cloudUpdated).getTime() : 0;
+        const localTime = localUpdated ? new Date(localUpdated).getTime() : 0;
+
+        if (cloudTime >= localTime) {
+            this.isApplyingRemote = true;
+            State.learned = cloudData.learned || [];
+            State.bestScore = cloudData.bestScore || 0;
+            State.examResults = cloudData.examResults || [];
+            State.totalQuizzesTaken = cloudData.totalQuizzesTaken || 0;
+            State.lastUpdated = cloudUpdated || new Date().toISOString();
+            State.saveLocalOnly();
+            Stats.update();
+            if (document.getElementById('profile-view')?.classList.contains('active')) {
+                Profile.update();
+            }
+            this.isApplyingRemote = false;
+        } else {
+            // Lokale Daten sind neuer -> hochschreiben
+            this.saveToCloud();
+        }
+
+        this.lastCloudUpdate = cloudUpdated;
     }
 };
 
@@ -88,15 +163,24 @@ const State = {
     bestScore: parseInt(localStorage.getItem('34i-best') || '0'),
     examResults: JSON.parse(localStorage.getItem('34i-exam-results') || '[]'),
     totalQuizzesTaken: parseInt(localStorage.getItem('34i-quizzes-taken') || '0'),
+    lastUpdated: localStorage.getItem('34i-last-updated') || null,
 
     save() {
+        this.lastUpdated = new Date().toISOString();
+        this.saveLocalOnly();
+
+        // Cloud-Sync
+        FirebaseSync.saveToCloud();
+    },
+
+    saveLocalOnly() {
         localStorage.setItem('34i-learned', JSON.stringify(this.learned));
         localStorage.setItem('34i-best', this.bestScore.toString());
         localStorage.setItem('34i-exam-results', JSON.stringify(this.examResults));
         localStorage.setItem('34i-quizzes-taken', this.totalQuizzesTaken.toString());
-
-        // Cloud-Sync
-        FirebaseSync.saveToCloud();
+        if (this.lastUpdated) {
+            localStorage.setItem('34i-last-updated', this.lastUpdated);
+        }
     },
 
     addExamResult(score, totalQuestions, timeSpent) {
@@ -163,7 +247,12 @@ const Profile = {
         // User ID
         const userIdEl = document.getElementById('userIdDisplay');
         if (userIdEl) {
-            userIdEl.textContent = FirebaseSync.userId ? FirebaseSync.userId.substring(0, 12) + '...' : '-';
+            const syncCode = localStorage.getItem(FirebaseSync.syncCodeKey);
+            if (syncCode) {
+                userIdEl.textContent = 'Sync-Code: ' + syncCode;
+            } else {
+                userIdEl.textContent = FirebaseSync.userId ? FirebaseSync.userId.substring(0, 12) + '...' : '-';
+            }
         }
 
         // Stats
@@ -179,6 +268,41 @@ const Profile = {
 
         // Exam History
         this.updateExamHistory();
+    },
+    
+    setSyncCode() {
+        const input = document.getElementById('syncCodeInput');
+        if (!input) return;
+        const raw = input.value.trim();
+        if (!raw) {
+            alert('Bitte einen Sync-Code eingeben.');
+            return;
+        }
+        const normalized = FirebaseSync.normalizeSyncCode(raw);
+        if (!normalized) {
+            alert('Sync-Code ist ungueltig. Bitte nur Buchstaben/Zahlen nutzen.');
+            return;
+        }
+        localStorage.setItem(FirebaseSync.syncCodeKey, normalized);
+        alert('Sync-Code gesetzt. Die App wird neu geladen.');
+        window.location.reload();
+    },
+    
+    generateSyncCode() {
+        const input = document.getElementById('syncCodeInput');
+        if (!input) return;
+        const random = Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 6);
+        const normalized = FirebaseSync.normalizeSyncCode(random);
+        input.value = normalized;
+    },
+    
+    clearSyncCode() {
+        if (!confirm('Sync-Code wirklich loeschen? Dann wird lokal synchronisiert.')) {
+            return;
+        }
+        localStorage.removeItem(FirebaseSync.syncCodeKey);
+        alert('Sync-Code geloescht. Die App wird neu geladen.');
+        window.location.reload();
     },
 
     updateExamHistory() {
