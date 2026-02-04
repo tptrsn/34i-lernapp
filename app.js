@@ -120,22 +120,141 @@ const State = {
 // ========================================
 const Navigation = {
     init() {
-        document.querySelectorAll('.nav-tab').forEach(tab => {
-            tab.addEventListener('click', () => this.switchView(tab.dataset.view));
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => this.switchView(item.dataset.view));
         });
     },
 
     switchView(view) {
-        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-        document.querySelector(`[data-view="${view}"]`).classList.add('active');
+        // Update navigation
+        document.querySelectorAll('.nav-item').forEach(t => t.classList.remove('active'));
+        const activeNav = document.querySelector(`.nav-item[data-view="${view}"]`);
+        if (activeNav) activeNav.classList.add('active');
+
+        // Update views
         document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-        document.getElementById(`${view}-view`).classList.add('active');
+        const activeView = document.getElementById(`${view}-view`);
+        if (activeView) activeView.classList.add('active');
 
         // Bei Wechsel zur Lernansicht: Suche zurücksetzen
         if (view === 'learn') {
-            document.getElementById('searchInput').value = '';
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.value = '';
             document.querySelectorAll('.section').forEach(s => s.style.display = 'block');
         }
+
+        // Update profile when switching to profile view
+        if (view === 'profile') {
+            Profile.update();
+        }
+
+        // Update home stats
+        if (view === 'home') {
+            Stats.update();
+        }
+    }
+};
+
+// ========================================
+// PROFILE MANAGER
+// ========================================
+const Profile = {
+    update() {
+        // User ID
+        const userIdEl = document.getElementById('userIdDisplay');
+        if (userIdEl) {
+            userIdEl.textContent = FirebaseSync.userId ? FirebaseSync.userId.substring(0, 12) + '...' : '-';
+        }
+
+        // Stats
+        const cardsEl = document.getElementById('profileCardsLearned');
+        const quizzesEl = document.getElementById('profileQuizzesTaken');
+        const scoreEl = document.getElementById('profileBestScore');
+        const examsEl = document.getElementById('profileExamsTaken');
+
+        if (cardsEl) cardsEl.textContent = State.learned.length;
+        if (quizzesEl) quizzesEl.textContent = State.totalQuizzesTaken;
+        if (scoreEl) scoreEl.textContent = State.bestScore + '%';
+        if (examsEl) examsEl.textContent = State.examResults.length;
+
+        // Exam History
+        this.updateExamHistory();
+    },
+
+    updateExamHistory() {
+        const historyEl = document.getElementById('examHistory');
+        if (!historyEl) return;
+
+        if (State.examResults.length === 0) {
+            historyEl.innerHTML = '<p class="empty-state">Noch keine Prüfungen absolviert</p>';
+            return;
+        }
+
+        const historyHTML = State.examResults.slice().reverse().map((exam) => {
+            const date = new Date(exam.date);
+            const dateStr = date.toLocaleDateString('de-DE', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+            const timeStr = date.toLocaleTimeString('de-DE', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            const statusIcon = exam.passed ? '✅' : '❌';
+
+            return `
+                <div class="stat-item">
+                    <span class="stat-item-label">${statusIcon} ${dateStr} ${timeStr}</span>
+                    <span class="stat-item-value">${exam.score}%</span>
+                </div>
+            `;
+        }).join('');
+
+        historyEl.innerHTML = historyHTML;
+    },
+
+    exportData() {
+        const data = {
+            userId: FirebaseSync.userId,
+            learned: State.learned,
+            bestScore: State.bestScore,
+            examResults: State.examResults,
+            totalQuizzesTaken: State.totalQuizzesTaken,
+            exportDate: new Date().toISOString()
+        };
+
+        const dataStr = JSON.stringify(data, null, 2);
+        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+        const url = URL.createObjectURL(dataBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `34i-lernfortschritt-${Date.now()}.json`;
+        link.click();
+        URL.revokeObjectURL(url);
+
+        alert('✅ Daten wurden exportiert!');
+    },
+
+    resetProgress() {
+        if (!confirm('⚠️ Wirklich den gesamten Lernfortschritt zurücksetzen?\n\nDies kann nicht rückgängig gemacht werden!')) {
+            return;
+        }
+
+        if (!confirm('Bist du dir sicher? Alle Daten werden gelöscht!')) {
+            return;
+        }
+
+        State.learned = [];
+        State.bestScore = 0;
+        State.examResults = [];
+        State.totalQuizzesTaken = 0;
+        State.save();
+
+        Stats.update();
+        this.update();
+
+        alert('✅ Fortschritt wurde zurückgesetzt');
     }
 };
 
@@ -759,14 +878,30 @@ const Stats = {
         const learned = State.learned.length;
         const progress = Math.round((learned / total) * 100);
 
-        document.getElementById('totalProgress').textContent = progress + '%';
-        document.getElementById('cardsLearned').textContent = learned;
-        document.getElementById('quizScore').textContent = State.bestScore > 0 ? State.bestScore + '%' : '–';
+        // Update all progress displays
+        const progressEls = document.querySelectorAll('#totalProgress');
+        progressEls.forEach(el => el.textContent = progress + '%');
+
+        const cardsEls = document.querySelectorAll('#cardsLearned');
+        cardsEls.forEach(el => el.textContent = learned);
+
+        const scoreEls = document.querySelectorAll('#quizScore');
+        scoreEls.forEach(el => el.textContent = State.bestScore > 0 ? State.bestScore + '%' : '–');
+
+        // Exams taken
+        const examsTakenEl = document.getElementById('examsTaken');
+        if (examsTakenEl) {
+            examsTakenEl.textContent = State.examResults.length;
+        }
 
         // Update flashcard counts
-        document.getElementById('fcAllCount').textContent = total + ' Karten';
-        document.getElementById('fcNewCount').textContent = (total - learned) + ' Karten';
-        document.getElementById('fcReviewCount').textContent = learned + ' Karten';
+        const fcAllCount = document.getElementById('fcAllCount');
+        const fcNewCount = document.getElementById('fcNewCount');
+        const fcReviewCount = document.getElementById('fcReviewCount');
+
+        if (fcAllCount) fcAllCount.textContent = total + ' Karten';
+        if (fcNewCount) fcNewCount.textContent = (total - learned) + ' Karten';
+        if (fcReviewCount) fcReviewCount.textContent = learned + ' Karten';
     }
 };
 
