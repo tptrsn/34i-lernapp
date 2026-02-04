@@ -1262,8 +1262,8 @@ tr:nth-child(even) {
 /* Profile View */
 .profile-header {
     text-align: center;
-    padding: 32px 20px;
-    margin: -20px -20px 28px;
+    padding: 20px 20px;
+    margin: -20px -20px 20px;
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, transparent 100%);
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
@@ -1288,7 +1288,7 @@ tr:nth-child(even) {
 }
 
 .profile-stats {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .profile-stats h3,
@@ -1336,7 +1336,7 @@ tr:nth-child(even) {
 }
 
 .profile-history {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .exam-history-list {
@@ -1354,12 +1354,20 @@ tr:nth-child(even) {
 }
 
 .profile-actions {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .profile-actions .btn {
     width: 100%;
     justify-content: center;
+}
+
+.profile-actions.sync-actions {
+    margin-bottom: 12px;
+}
+
+.sync-card {
+    padding: 16px;
 }
 
 .app-info {
@@ -1622,6 +1630,17 @@ tr:nth-child(even) {
 <p class="profile-id">ID: <span id="userIdDisplay">-</span></p>
 </div>
 
+<div class="profile-actions sync-actions">
+<div class="exam-history-list sync-card">
+<h3 style="margin-bottom:8px;">Sync-Code</h3>
+<p style="color:#a0aec0;font-size:0.9rem;margin-bottom:12px;">Nutze einen Code, um auf mehreren Geräten zu synchronisieren.</p>
+<input type="text" id="syncCodeInput" class="search-input" placeholder="Sync-Code eingeben" style="margin-bottom:12px;">
+<button class="btn btn-primary" onclick="Profile.setSyncCode()">Sync-Code setzen</button>
+<button class="btn btn-secondary" onclick="Profile.generateSyncCode()" style="margin-top:12px;">Code generieren</button>
+<button class="btn btn-secondary" onclick="Profile.clearSyncCode()" style="margin-top:12px;">Sync-Code löschen</button>
+</div>
+</div>
+
 <div class="profile-stats">
 <h3>Statistiken</h3>
 <div class="stat-list">
@@ -1658,17 +1677,6 @@ tr:nth-child(even) {
 <button class="btn btn-secondary" onclick="Profile.resetProgress()" style="margin-top: 12px;">
 🔄 Fortschritt zurücksetzen
 </button>
-</div>
-
-<div class="profile-actions" style="margin-top: 16px;">
-<div class="card" style="padding:16px;">
-<h3 style="margin-bottom:8px;">Sync-Code</h3>
-<p style="color:#a0aec0;font-size:0.9rem;margin-bottom:12px;">Nutze einen Code, um auf mehreren Geräten zu synchronisieren.</p>
-<input type="text" id="syncCodeInput" class="search-input" placeholder="Sync-Code eingeben" style="margin-bottom:12px;">
-<button class="btn btn-primary" onclick="Profile.setSyncCode()">Sync-Code setzen</button>
-<button class="btn btn-secondary" onclick="Profile.generateSyncCode()" style="margin-top:12px;">Code generieren</button>
-<button class="btn btn-secondary" onclick="Profile.clearSyncCode()" style="margin-top:12px;">Sync-Code löschen</button>
-</div>
 </div>
 
 <div class="app-info">
