@@ -240,6 +240,32 @@ const Navigation = {
 };
 
 // ========================================
+// HOME PROGRAM TABS
+// ========================================
+const HomeTabs = {
+    init() {
+        const tabs = Array.from(document.querySelectorAll('.program-tabs .tab-btn'));
+        const panels = Array.from(document.querySelectorAll('.program-panels .tab-panel'));
+        if (!tabs.length || !panels.length) return;
+
+        const activate = (tabId) => {
+            tabs.forEach(btn => {
+                const isActive = btn.dataset.tab === tabId;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+            panels.forEach(panel => {
+                panel.classList.toggle('active', panel.id === `tab-${tabId}`);
+            });
+        };
+
+        tabs.forEach(btn => {
+            btn.addEventListener('click', () => activate(btn.dataset.tab));
+        });
+    }
+};
+
+// ========================================
 // PROFILE MANAGER
 // ========================================
 const Profile = {
@@ -1041,6 +1067,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await FirebaseSync.init();
 
     Navigation.init();
+    HomeTabs.init();
     Learning.init();
     Stats.update();
 
