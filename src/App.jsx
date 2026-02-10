@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import AppData from './data/appData.js';
+import KreditsachbearbeiterData from './data/kreditsachbearbeiterData.js';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -376,61 +377,94 @@ function App() {
 
           <div className="today-card" style={{ marginBottom: '24px' }}>
             <div className="today-card-header">
-              <span className="today-module-tag">Vollzeit • Kassel</span>
+              <span className="today-module-tag">Vollzeit • Kassel, Hessen</span>
               <span className="today-type">Backoffice</span>
             </div>
-            <h3 className="today-title">Deine Aufgaben bei HYPOVISION</h3>
+            <h3 className="today-title">Professionelle Kreditsachbearbeitung</h3>
             <div className="today-meta">
-              <span className="today-duration">💼 Backoffice-Position</span>
+              <span className="today-duration">⏱ {KreditsachbearbeiterData.chapters.reduce((sum, ch) => sum + ch.hours, 0)} Unterrichtsstunden</span>
             </div>
             <div className="today-card-decoration"></div>
           </div>
 
-          <div style={{ padding: '0 20px' }}>
+          <div style={{ padding: '0 20px', marginBottom: '24px' }}>
             <div className="content-block">
-              <h4>Hauptaufgaben:</h4>
+              <h4>Hauptaufgaben als Kreditsachbearbeiter:</h4>
               <ul>
-                <li><strong>Umsetzung vorbereiteter Finanzierungsanfragen</strong> – Keine Kundenberatung erforderlich</li>
-                <li><strong>Angebotsvergleiche und Konditionsprüfung</strong> – Bankangebote analysieren und vergleichen</li>
-                <li><strong>Pflege von Bank- und Partnernetzwerken</strong> – Kontakte zu Finanzierungspartnern</li>
-                <li><strong>Bearbeitung von Finanzierungsanträgen</strong> – Administrative Abwicklung</li>
+                <li><strong>Konditionsvergleich:</strong> Bankangebote analysieren und bewerten</li>
+                <li><strong>Angebotsanalyse:</strong> Beste Finanzierungslösung für den Kunden finden</li>
+                <li><strong>Antragsbearbeitung:</strong> Vollständige Unterlagen zusammenstellen und prüfen</li>
+                <li><strong>Bankenkommunikation:</strong> Professionelle Zusammenarbeit mit Finanzierungspartnern</li>
+                <li><strong>Dokumentation:</strong> Lückenlose Bearbeitung bis zur Auszahlung</li>
               </ul>
             </div>
 
-            <div className="def-box">
-              <div className="term">Was du mitbringst:</div>
-              <div className="meaning">
-                ✓ Abgeschlossene Ausbildung im Bereich Bankwesen/Finanzberatung<br/>
-                ✓ Zertifizierung als Immobiliendarlehensvermittler nach §34i GewO (wünschenswert)<br/>
-                ✓ Fundierte Kenntnisse im Bereich Immobilienfinanzierung<br/>
-                ✓ Selbstständige, strukturierte Arbeitsweise<br/>
-                ✓ Serviceorientierung
+            <div className="progress-card" style={{ marginTop: '20px' }}>
+              <div className="progress-header">
+                <div>
+                  <div className="progress-label">Lernmaterial</div>
+                  <div className="progress-stats">Vollständiger Praxisleitfaden</div>
+                </div>
+                <div className="progress-ring">
+                  <svg width="60" height="60">
+                    <circle cx="30" cy="30" r="26" fill="none" stroke="var(--surface-light)" strokeWidth="6"/>
+                  </svg>
+                  <div className="progress-ring-text">{KreditsachbearbeiterData.chapters.length}</div>
+                </div>
+              </div>
+              <div className="progress-details">
+                <div className="progress-detail-item">
+                  <span className="progress-detail-value">{KreditsachbearbeiterData.chapters.length}</span>
+                  <span className="progress-detail-label">Module</span>
+                </div>
+                <div className="progress-divider"></div>
+                <div className="progress-detail-item">
+                  <span className="progress-detail-value">{KreditsachbearbeiterData.chapters.reduce((sum, ch) => sum + ch.sections.length, 0)}</span>
+                  <span className="progress-detail-label">Lektionen</span>
+                </div>
+                <div className="progress-divider"></div>
+                <div className="progress-detail-item">
+                  <span className="progress-detail-value">{KreditsachbearbeiterData.chapters.reduce((sum, ch) => sum + ch.hours, 0)}</span>
+                  <span className="progress-detail-label">UE</span>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div className="important-box">
-              <div className="label">💎 Benefits bei HYPOVISION</div>
-              <p>
-                <strong>Sicherer Arbeitsplatz:</strong> Übernahmequote über 95%, unbefristete Anstellung<br/><br/>
-                <strong>Attraktive Vergütung:</strong> Faires Gehalt, Urlaubs- und Weihnachtsgeld, VL<br/><br/>
-                <strong>Karrierechancen:</strong> Aufstiegs- und Entwicklungsmöglichkeiten<br/><br/>
-                <strong>Mentoring-Programm</strong> für alle Mitarbeiter<br/><br/>
-                <strong>Moderne Ausstattung:</strong> Apple-Geräte, Kaffeevollautomaten, Boni
-              </p>
-            </div>
-
-            <div className="example-box">
-              <div className="label">🎯 Lernfokus für diese Position</div>
-              <p>
-Schwerpunkte für die Kreditsachbearbeitung:
-
-• Konditionsvergleich und Angebotsanalyse
-• Finanzierungsstrukturen und Produktkenntnisse
-• Bank- und Partnernetzwerke
-• Dokumentation und Antragsbearbeitung
-• Marktübersicht Immobilienfinanzierung
-              </p>
-            </div>
+          <div className="chapters-container">
+            {KreditsachbearbeiterData.chapters.map((chapter) => (
+              <div
+                key={chapter.id}
+                className={`chapter ${openChapters[chapter.id] ? 'open' : ''}`}
+              >
+                <div className="chapter-header" onClick={() => toggleChapter(chapter.id)}>
+                  <div className="chapter-title">
+                    <span style={{ marginRight: '10px' }}>{chapter.icon}</span>
+                    {chapter.title}
+                  </div>
+                  <div className="chapter-meta">
+                    <span className="chapter-hours">{chapter.hours} UE</span>
+                    <span className="chapter-toggle">{openChapters[chapter.id] ? '▲' : '▼'}</span>
+                  </div>
+                </div>
+                {openChapters[chapter.id] && (
+                  <div className="chapter-content">
+                    {chapter.sections.map((section) => (
+                      <div key={section.id} className="section">
+                        <div className="section-title">
+                          <span className="section-number">{section.id}</span>
+                          {section.title}
+                        </div>
+                        <div
+                          dangerouslySetInnerHTML={{ __html: section.content }}
+                          style={{ lineHeight: '1.8' }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
       )}
