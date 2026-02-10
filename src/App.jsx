@@ -74,7 +74,7 @@ function App() {
             <span className="logo-text">FinanzAkademie</span>
           </div>
           <button className="profile-btn" onClick={() => handleNavigation('profil')}>
-            <span className="profile-avatar">TM</span>
+            <span className="profile-avatar">TS</span>
           </button>
         </div>
       </header>
@@ -84,12 +84,15 @@ function App() {
         <>
           <section className={`hero ${isVisible ? 'visible' : ''}`}>
             <div className="hero-decoration"></div>
+            <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, rgba(13, 115, 119, 0.1), rgba(201, 118, 100, 0.1))', padding: '8px 16px', borderRadius: '12px', marginBottom: '16px', fontSize: '14px', fontWeight: '600', color: 'var(--primary)' }}>
+              👋 Hallo Tobias!
+            </div>
             <h1 className="hero-title">
               Dein Weg zum<br />
               <span className="hero-title-accent">Finanzierungs-Profi</span>
             </h1>
             <p className="hero-subtitle">
-              Lerne für die §34i Sachkundeprüfung und die Position als Kreditsachbearbeiter bei HYPOVISION.
+              Lerne für die §34i Sachkundeprüfung und die Position als Kreditsachbearbeiter bei HYPOVISION in Kassel.
             </p>
 
             <div className="progress-card">
@@ -494,14 +497,23 @@ function App() {
             <h2 className="section-title">Mein Profil</h2>
           </div>
           <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-            <div style={{ fontSize: '80px', marginBottom: '16px' }}>🎓</div>
-            <h3 style={{ fontSize: '24px', marginBottom: '8px', color: 'var(--text-primary)' }}>
-              Lernender
+            <div className="profile-avatar" style={{ fontSize: '80px', width: '120px', height: '120px', borderRadius: '24px', margin: '0 auto 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, var(--primary), var(--primary-light))', color: 'white', fontWeight: '700', fontSize: '48px', boxShadow: 'var(--shadow-lg)' }}>TS</div>
+            <h3 style={{ fontSize: '28px', marginBottom: '8px', color: 'var(--text-primary)', fontFamily: 'Crimson Pro, serif' }}>
+              Tobias Senz
             </h3>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>
-              §34i Sachkundeprüfung + Kreditsachbearbeiter
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '12px', fontSize: '16px', fontWeight: '500' }}>
+              Kreditsachbearbeiter (m/w/d)
             </p>
-            <div className="progress-card" style={{ maxWidth: '500px', margin: '0 auto' }}>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '32px', fontSize: '14px' }}>
+              HYPOVISION · Kassel, Hessen
+            </p>
+            <div className="progress-card" style={{ maxWidth: '500px', margin: '0 auto 24px' }}>
+              <div className="progress-header" style={{ marginBottom: '20px' }}>
+                <div>
+                  <div className="progress-label">§34i Sachkundeprüfung</div>
+                  <div className="progress-stats">DIHK Rahmenplan</div>
+                </div>
+              </div>
               <div className="progress-details">
                 <div className="progress-detail-item">
                   <span className="progress-detail-value">{AppData.chapters.length}</span>
@@ -518,6 +530,57 @@ function App() {
                   <span className="progress-detail-label">UE</span>
                 </div>
               </div>
+            </div>
+
+            <div className="progress-card" style={{ maxWidth: '500px', margin: '0 auto 32px' }}>
+              <div className="progress-header" style={{ marginBottom: '20px' }}>
+                <div>
+                  <div className="progress-label">Kreditsachbearbeiter</div>
+                  <div className="progress-stats">HYPOVISION Praxiswissen</div>
+                </div>
+              </div>
+              <div className="progress-details">
+                <div className="progress-detail-item">
+                  <span className="progress-detail-value">{KreditsachbearbeiterData.chapters.length}</span>
+                  <span className="progress-detail-label">Module</span>
+                </div>
+                <div className="progress-divider"></div>
+                <div className="progress-detail-item">
+                  <span className="progress-detail-value">{KreditsachbearbeiterData.chapters.reduce((sum, ch) => sum + ch.sections.length, 0)}</span>
+                  <span className="progress-detail-label">Lektionen</span>
+                </div>
+                <div className="progress-divider"></div>
+                <div className="progress-detail-item">
+                  <span className="progress-detail-value">{KreditsachbearbeiterData.chapters.reduce((sum, ch) => sum + ch.hours, 0)}</span>
+                  <span className="progress-detail-label">UE</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="today-card" style={{ maxWidth: '500px', margin: '0 auto', textAlign: 'left' }}>
+              <div className="today-card-header">
+                <span className="today-module-tag">Lernziele</span>
+              </div>
+              <h3 className="today-title" style={{ fontSize: '20px' }}>Deine Schwerpunkte</h3>
+              <div style={{ marginTop: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '24px' }}>📊</span>
+                  <span style={{ fontSize: '15px', color: 'white', opacity: '0.95' }}>Konditionsvergleich & Angebotsanalyse</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '24px' }}>🏗️</span>
+                  <span style={{ fontSize: '15px', color: 'white', opacity: '0.95' }}>Finanzierungsstrukturen beherrschen</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '24px' }}>📄</span>
+                  <span style={{ fontSize: '15px', color: 'white', opacity: '0.95' }}>Professionelle Antragsbearbeitung</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ fontSize: '24px' }}>🏦</span>
+                  <span style={{ fontSize: '15px', color: 'white', opacity: '0.95' }}>Bank- und Partnernetzwerke aufbauen</span>
+                </div>
+              </div>
+              <div className="today-card-decoration"></div>
             </div>
           </div>
         </section>
