@@ -2,19 +2,102 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+
+    <!-- Viewport mit iOS Safe Area Support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, maximum-scale=1.0" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Professionelle Lernapp für §34i Sachkundeprüfung und Kreditsachbearbeiter bei HYPOVISION" />
     <meta name="theme-color" content="#0d7377" />
-    <meta name="description" content="Moderne Lernapp für Immobilienfinanzierung" />
-    <title>FinanzAkademie - Immobilienfinanzierung lernen</title>
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Apple-spezifische Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="FinanzAkademie" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%230d7377' width='180' height='180' rx='40'/><text x='90' y='125' font-size='95' text-anchor='middle' fill='white'>🏡</text></svg>" />
+    <link rel="apple-touch-icon" sizes="152x152" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 152 152'><rect fill='%230d7377' width='152' height='152' rx='34'/><text x='76' y='105' font-size='80' text-anchor='middle' fill='white'>🏡</text></svg>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%230d7377' width='180' height='180' rx='40'/><text x='90' y='125' font-size='95' text-anchor='middle' fill='white'>🏡</text></svg>" />
+    <link rel="apple-touch-icon" sizes="167x167" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 167 167'><rect fill='%230d7377' width='167' height='167' rx='37'/><text x='83.5' y='116' font-size='88' text-anchor='middle' fill='white'>🏡</text></svg>" />
+
+    <!-- Apple Splash Screens für iPhone 15 -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1179 2556'><rect fill='%23fafaf9' width='1179' height='2556'/><text x='589.5' y='1350' font-size='200' text-anchor='middle' fill='%230d7377' font-family='system-ui' font-weight='700'>FinanzAkademie</text><text x='589.5' y='1450' font-size='80' text-anchor='middle' fill='%23c97664'>§34i Lernapp</text></svg>" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏡</text></svg>" />
+
+    <title>FinanzAkademie - §34i Lernapp</title>
+
     <style>
+      /* Critical CSS für schnelles Rendering */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
         margin: 0;
         overscroll-behavior: none;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: pan-y;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        background: #fafaf9;
+      }
+
+      /* iOS Safe Area Support */
+      @supports (padding-top: env(safe-area-inset-top)) {
+        body {
+          padding-top: env(safe-area-inset-top);
+          padding-bottom: env(safe-area-inset-bottom);
+        }
+      }
+
+      /* Loading Screen */
+      #app-loading {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fafaf9;
+        z-index: 9999;
+      }
+      #app-loading .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #e7e5e4;
+        border-top-color: #0d7377;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
     </style>
   </head>
   <body>
+    <div id="app-loading">
+      <div class="spinner"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('✅ Service Worker registered'))
+            .catch(err => console.log('❌ Service Worker registration failed:', err));
+        });
+      }
+
+      // Remove loading screen when app loads
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const loading = document.getElementById('app-loading');
+          if (loading) loading.style.display = 'none';
+        }, 500);
+      });
+    </script>
   </body>
 </html>

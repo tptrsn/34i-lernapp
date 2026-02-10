@@ -3,7 +3,6 @@ import './App.css';
 import AppData from './data/appData.js';
 
 function App() {
-  const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [activeView, setActiveView] = useState('home');
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,9 +15,6 @@ function App() {
 
   useEffect(() => {
     setIsVisible(true);
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavigation = (view) => {
@@ -67,12 +63,10 @@ function App() {
     )
   );
 
-  const scrollTransform = Math.min(scrollY * 0.3, 50);
-
   return (
     <div className="app">
       {/* Header */}
-      <header className="header" style={{ transform: `translateY(${scrollTransform}px)` }}>
+      <header className="header">
         <div className="header-content">
           <div className="logo">
             <span className="logo-icon">🏡</span>

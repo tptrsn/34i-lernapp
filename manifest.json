@@ -1,25 +1,32 @@
 {
-  "name": "§34i Sachkundeprüfung Lern-App",
-  "short_name": "§34i Lernapp",
-  "description": "Premium Lern-App für die IHK Sachkundeprüfung Immobiliardarlehensvermittlung mit Cloud-Sync",
-  "start_url": "./index.html",
+  "name": "FinanzAkademie - §34i Lernapp",
+  "short_name": "FinanzAkademie",
+  "description": "Professionelle Lernapp für §34i Sachkundeprüfung und Kreditsachbearbeiter",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0e27",
-  "theme_color": "#00d4ff",
+  "background_color": "#fafaf9",
+  "theme_color": "#0d7377",
   "orientation": "portrait-primary",
-  "categories": ["education", "productivity"],
+  "categories": ["education", "finance", "productivity"],
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%2300d4ff' width='192' height='192' rx='48'/><text x='96' y='120' font-size='80' text-anchor='middle' fill='white' font-family='system-ui'>📚</text></svg>",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%230d7377' width='192' height='192' rx='42'/><text x='96' y='130' font-size='100' text-anchor='middle' fill='white'>🏡</text></svg>",
       "sizes": "192x192",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%2300d4ff' width='512' height='512' rx='128'/><text x='256' y='320' font-size='200' text-anchor='middle' fill='white' font-family='system-ui'>📚</text></svg>",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%230d7377' width='512' height='512' rx='112'/><text x='256' y='350' font-size='280' text-anchor='middle' fill='white'>🏡</text></svg>",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%230d7377' width='192' height='192' rx='42'/><rect fill='%230d7377' x='19.2' y='19.2' width='153.6' height='153.6' rx='33.6'/><text x='96' y='130' font-size='100' text-anchor='middle' fill='white'>🏡</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ]
 }
